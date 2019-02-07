@@ -1,0 +1,67 @@
+out_to_x no
+own_window no
+out_to_console yes
+background no
+max_text_width 0
+
+# Update interval in seconds
+update_interval 2.0
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Shortens units to a single character (kiB->k, GiB->G, etc.). Default is off.
+short_units yes
+
+# How strict should if_up be when testing an interface for being up?
+# The value is one of up, link or address, to check for the interface
+# being solely up, being up and having link or being up, having link
+# and an assigned IP address. 
+if_up_strictness address
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+# use_spacer should have an argument of left, right, or none
+use_spacer left
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+top_name_width 5
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# Stuff after 'TEXT' will be formatted on screen
+  #{ "full_text" : " d ${time %Y}" , "color" : "\#ffffff" },
+  #{ "full_text" : "RAM ${memperc}%" , "color" : "\#ffffff" },
+TEXT
+
+# JSON for i3bar
+
+ [
+  #{ "full_text" : "${texeci 300 curl -s waze.perfscript.fr/my.php}", "color" : "\#2ECCFA" },
+  { "full_text" : "${top name 1} ${loadavg 1}", "color" : "\#fff000" },
+  #{ "full_text" : "/ ${fs_free /} Free", "color" : "\#ffffff" },
+  #{ "full_text" : "Home ${fs_free /home} Free", "color" : "\#ffffff" },
+  #{ "full_text" : "PHP : ${execi 120 php -v | head -1 | awk '{ print $2 }'}", "color" : "\#66CCFF" },
+  #{ "full_text" : "Mails : ${texeci 60 php ~/.i3/bin/imap.php}", "color" : "\#9A2EFE" },
+  #{ "full_text" : "PHP : ${texeci 120 wget http://dev.lo/version.php  -O - -o /dev/null}", "color" : "\#66CCFF" },
+  #{ "full_text" : "T411 : ${texeci 60 $HOME/Scripts/bash/t411.sh}", "color" : "\#FFF89" },
+  #{ "full_text" : "${texeci 3600 wget http://ifconfig.me/ip -O - -o /dev/null}", "color" : "\#FF9933" },
+  { "full_text" : "${texeci 300 curl -s checkip.dyndns.org | sed -e 's/.*Current IP Address: //' -e 's/<.*$//'}", "color" : "\#FF9933" },
+  { "full_text" : "${if_up wlp1s0} ${texeci 120 ifconfig wlp1s0 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'} ${endif}", "color" : "\#FF9933" },
+  { "full_text" : "${if_up wlp1s0} D:${downspeed wlp1s0} U:${upspeed wlp1s0} ${endif}" , "color" : "\#ffffff" },
+  { "full_text" : "${if_up enp0s20f0u4u1u3} ${texeci 120 ifconfig enp0s20f0u4u1u3 | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'} ${endif}", "color" : "\#FF9933" },
+  { "full_text" : "${if_up enp0s20f0u4u1u3} D:${downspeed enp0s20f0u4u1u3} U:${upspeed enp0s20f0u4u1u3} ${endif}" , "color" : "\#ffffff" },
+  { "full_text" : "Bat.: ${battery_percent} % " , "color" : "\#ffffff" },
+  #{ "full_text" : "Load: ${loadavg 1} | ${loadavg 2} | ${loadavg 3}" , "color" : "\#ffffff" },
+  { "full_text" : "Load: ${loadavg 1} " , "color" : "\#ffffff" },
+  { "full_text" : "${time %A %d %B %H:%M}" , "color" : "\#ffffff" }
+
+ ],
+
+
+
+
+

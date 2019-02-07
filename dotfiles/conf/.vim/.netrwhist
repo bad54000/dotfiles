@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/dany/Scripts/ssh/pass'
+let g:netrw_dirhist_2='/home/dany/.config/autostart'
+let g:netrw_dirhist_3='/mnt/nas/Documents/Documentations'
+let g:netrw_dirhist_4='/home/dany/dotfiles/conf/.bashrc.d'
+let g:netrw_dirhist_5='/home/dany/dumps/old_contact_20150209'

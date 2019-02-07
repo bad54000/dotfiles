@@ -1,0 +1,15 @@
+alias la='ls -alF'
+alias ll='ls -lF'
+alias l='ls -l'
+
+alias vi='vim'
+alias s='sudo'
+alias t='task'
+alias p='pssh'
+
+alias netstat-listen='netstat -lepunt'
+alias whereiam='curl ipinfo.io'
+
+#same last command with sudo
+alias please='sudo $(history -p \!\!)'
+
