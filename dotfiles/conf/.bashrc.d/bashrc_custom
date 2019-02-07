@@ -1,4 +1,0 @@
-export TERMINAL=terminator
-export SES=/home/dany/www/sesame2.0
-export SE=/var/www/sesame_prod2/sesame2.0/
-export PATH=$PATH:~/dotfiles/scripts/
