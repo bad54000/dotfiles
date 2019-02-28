@@ -31,6 +31,7 @@ function ds {
 alias suspend='s systemctl suspend'
 alias dc=docker-compose
 alias d=docker
+alias k=kubectl
 alias mysqldocker='docker exec -it sesamecorp_mysql_1 mysql -u root'
 alias redisdocker='docker exec -it sesamecorp_redis_1 redis-cli'
 alias dbcorp="db $(docker ps -a | grep -E 'corp.*web' | awk '{print $1}')"
