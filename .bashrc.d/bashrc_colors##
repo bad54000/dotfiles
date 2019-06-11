@@ -1,0 +1,2 @@
+source $HOME/.bashrc.d/colors
+ENV_COLOR=$BLUE
