@@ -1,17 +1,17 @@
 export TERMINAL=terminator
 export PATH=$PATH:~/dotfiles/scripts/:/usr/lib/jvm/java/bin
-export MARKDOWN_FILES_DIR=/home/dany/Documents/doc
+export MARKDOWN_FILES_DIR=$HOME/Documents/doc
 
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_STYLE_OVERRIDE=Fusion
 export XDG_CURRENT_DESKTOP=KDE
 export DESKTOP_SESSION=kde dolphin
 
-source /home/dany/dotfiles/scripts/autocomplete.sh
+source $HOME/dotfiles/scripts/autocomplete.sh
 
 alias dcasper=dcasper
 dcasper() {
-  docker run --rm --link=sesamecorp_web_1:web1 -v /home/dany/sesame:/data casper:5000/sesame-sfr/casperjs casperjs test casper/integration.js --domaine=http://web1/ --savepath=/data/tmp --profil=$1
+  docker run --rm --link=sesamecorp_web_1:web1 -v $HOME/sesame:/data casper:5000/sesame-sfr/casperjs casperjs test casper/integration.js --domaine=http://web1/ --savepath=/data/tmp --profil=$1
 }
 
 alias dphpunit=dphpunit
@@ -43,7 +43,7 @@ docker run --rm -it
     --link sesamecorp_redis_1:phpunit_redis    
     --link sesamecorp_elasticsearch_1:phpunit_elasticsearch     
     --link sesamecorp_mailcatcher_1:phpunit_mailcatcher     
-    -v /home/dany/sesame:/var/www/html  
+    -v $HOME/sesame:/var/www/html  
 scorp-phpunit'
 # alias vpn='nmcli con up id MYCON'
 alias unvpn='nmcli con down id MYCON'
