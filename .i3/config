@@ -22,7 +22,10 @@ set $d8 8 mail
 set $d9 9 skype
 
 # put screens on twin view mode
-exec xrandr --output DVI-I-1 --primary --right-of HDMI-1
+#exec xrandr --output DVI-I-1 --primary --right-of HDMI-1
+
+
+
 #exec xset -dpms
 exec --no-startup-id numlockx on
 #exec mount -t cifs //perfscript/nas /mnt/nas -o user=nas,password=nas,uid=1000,gid=100,workgroup=WORKGROUP,port=446
@@ -35,14 +38,15 @@ exec terminator --command="tmux"
 #exec gtg
 exec shutter
 # exec slack
+exec flameshot
 #exec screencloud
-exec thunderbird 
+#exec thunderbird 
 #exec skype
 #exec dolphin
 exec nemo --no-desktop
 exec redshift-gtk
 exec subl
-exec phpstorm
+#exec phpstorm
 #exec mysql-workbench
 exec smartgit
 exec nm-applet
@@ -53,10 +57,11 @@ exec volumeicon
 exec gnome-settings-daemon
 #exec i3-msg workspace 2; exec 
 exec --no-startup-id "polybar -r main"
-exec --no-startup-id "polybar -r second"
+# exec --no-startup-id "polybar -r second"
 
 # Redémarre polybar quand on redémarre i3
-#exec_always --no-startup-id "killall polybar;polybar -r center & polybar -r left & polybar -r right"
+# exec_always --no-startup-id "killall polybar;polybar -r center & polybar -r left & polybar -r right"
+# exec_always --no-startup-id "killall polybar;polybar -r main"
 
 #bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +6.25%
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -- -6.25%
@@ -92,7 +97,7 @@ bindsym $mod+q kill
 bindsym $mod+d exec rofi -show run
 
 #bindsym Ctrl+Alt+l exec terminator
-bindsym Mod1+Ctrl+a exec /usr/bin/keepass2 --auto-type
+#bindsym Mod1+Ctrl+a exec /usr/bin/keepass2 --auto-type
 bindsym $mod+Ctrl+l exec i3lock -i /home/dany/Images/linux.png -n -t
 #bindsym $mod+Ctrl+x exec sudo pm-suspend
 

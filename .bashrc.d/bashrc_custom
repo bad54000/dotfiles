@@ -48,6 +48,10 @@ scorp-phpunit'
 # alias vpn='nmcli con up id MYCON'
 alias unvpn='nmcli con down id MYCON'
 alias gchangelog='git log `git describe --tags --abbrev=0`..HEAD --oneline'
+alias tf='terraform'
+alias tfp='terraform plan'
+alias ..='cd ..'
+alias ...='cd ../..'
 
 # KDE support for dolphin
 XDG_CURRENT_DESKTOP=KDE
